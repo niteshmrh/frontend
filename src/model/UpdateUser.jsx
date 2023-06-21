@@ -3,25 +3,27 @@ import { useFormik } from "formik";
 import { addUserValidationSchema } from "../utils/validations";
 import axios from "axios";
 
-const initialValues = {
-  Name: "",
-  Email: "",
-  Mobile: "",
-};
-
-function AddUser(props) {
+function UpdateUser({ update }) {
+  const initialValues = {
+    Name: update.name,
+    Email: update.email,
+    Mobile: update.phone_number,
+  };
+  const id = update?.id;
+  console.log("update user data", update, id);
   const [isFormSubmit, setIsFormSubmit] = useState(false);
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
+      enableReinitialize: true,
       validationSchema: addUserValidationSchema,
       onSubmit: async (values) => {
         try {
           console.log("Add User", values);
           // console.log("Add User particular", values);
           setIsFormSubmit(true);
-          const response = await axios.post(
-            `http://localhost:4000/api/v1/createUser`,
+          const response = await axios.patch(
+            `http://localhost:4000/api/v1/updateUser?id=${id}`,
             {
               name: values.Name,
               email: values.Email,
@@ -57,7 +59,7 @@ function AddUser(props) {
         <div className="col-md-12">
           <div
             className="modal fade"
-            id="addUser"
+            id="updateuser"
             tabIndex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
@@ -70,7 +72,7 @@ function AddUser(props) {
                   noValidate
                 >
                   <div className="modal-header">
-                    <h5 className="modal-title text-opacity">Add User</h5>
+                    <h5 className="modal-title text-opacity">Update User</h5>
                     <button
                       type="button"
                       className="btn-close"
@@ -166,7 +168,7 @@ function AddUser(props) {
                       value="Submit"
                       className="btn btn-primary btn-sm"
                     >
-                      Submit
+                      Update
                     </button>
                   </div>
                 </form>
@@ -179,4 +181,4 @@ function AddUser(props) {
   );
 }
 
-export default AddUser;
+export default UpdateUser;

@@ -1,13 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header/Header";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
-      <Dashboard />
+      <AppRoutes />
     </div>
   );
 }
