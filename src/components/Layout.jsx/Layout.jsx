@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Icons } from "../../assets/icons";
 import axios from "axios";
 import "./style.css";
-import AddUser from "../../model/AddUser";
+// import AddUser from "../../model/AddUser";
 import { NavLink } from "react-router-dom";
 
 function Layout(props) {
@@ -60,7 +60,7 @@ function Layout(props) {
   // console.log(userDetails[0].name);
 
   return (
-    <div className="container-fluid mt-3">
+    <div className="container-fluid p-2">
       <div className="row">
         <div className="col-md-12">
           <div className="row">
@@ -68,7 +68,7 @@ function Layout(props) {
               <>
                 {userDetails.map((user) => (
                   <div className="col-md-4 p-2" key={user.id}>
-                    <div className="card">
+                    <div className="card border-0 shadow">
                       <div className="card-body">
                         <table className="table table-sm table-borderless">
                           <tbody>

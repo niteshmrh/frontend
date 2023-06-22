@@ -2,32 +2,27 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import AddUser from "../../model/AddUser";
 import logo from "../../assets/images/logo.png";
+import { Icons } from "../../assets/icons";
 
 function Header(props) {
   return (
-    <nav className="bg-body-danger py-3">
-      <div className="container">
+    <nav className="py-2 border-bottom">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
             <div className="d-flex  justify-content-between">
-              <div className="logo fw-bold fs-4 text-danger">
-                <NavLink to="/" className="linker">
-                  <img
-                    src={logo}
-                    alt="logo"
-                    width={69}
-                    height={55}
-                    className="d-inline-block align-text-top ms-1"
-                  />
-                  <span className="ms-3 mb-3 fs-10 text-decoration-none">
+              <div className="logo fw-bold fs-4 border rounded p-1 bg-primary">
+                <NavLink to="/" className="text-decoration-none text-light">
+                  {Icons.MdManageAccounts}
+                  <span className="mb-3 fs-8 align-self-center fw-medium">
                     User Management
                   </span>
                 </NavLink>
               </div>
-              <div className="menu-bar">
+              <div className="menu-bar d-flex align-items-center">
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-primary fw-medium"
                   data-bs-toggle="modal"
                   data-bs-target="#addUser"
                 >

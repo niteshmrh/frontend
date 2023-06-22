@@ -40,7 +40,7 @@ function UserDetail(props) {
   // console.log("user==========>", user);
 
   return (
-    <div className="container">
+    <div className="p-4 container">
       <div className="row">
         <div className="col-md-12">
           <div className="border p-2 rounded bg-white">

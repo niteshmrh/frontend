@@ -113,7 +113,7 @@ function AddUser(props) {
                         name="Email"
                         placeholder="Email"
                         className={`form-control form-control-sm ${
-                          errors.email && touched.Email
+                          errors.Email && touched.Email
                             ? "is-invalid"
                             : touched.Email
                             ? "is-valid"

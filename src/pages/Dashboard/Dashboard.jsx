@@ -7,9 +7,9 @@ function Dashboard(props) {
     <div className="container-fluid my-2">
       <div className="row">
         <div className="col md-12">
-          <div className="card">
+          <div className="card border-0 shadow-lg">
             <div className="card-body">
-              <h5 className="card-title">User Details</h5>
+              <h5 className="card-title ms-3">User Details</h5>
               <Layout />
             </div>
           </div>
